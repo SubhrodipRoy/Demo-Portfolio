@@ -1,0 +1,236 @@
+/* styles.css */
+
+/* TERMINAL-THEME BASE */
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0d0d0d;
+    color: #33ff33;
+    line-height: 1.6;
+  }
+
+  #matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.29999999999999998;
+  }
+  body, header, section, footer {
+    position: relative;
+    z-index: 1;
+  }
+  
+  header, footer {
+    background-color: #1a1a1a;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #33ff33;
+  }
+  
+  header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #33ff33;
+  }
+
+  #hero {
+    font-size: 20px;
+  }
+  #typed-text {
+    color: #22ff22; /* your green */
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  #cursor {
+    display: inline-block;
+    color: #22ff22;
+    font-weight: bold;
+    animation: blink 1s steps(2, start) infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  nav ul li a {
+    color: #33ff33;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+  }
+  
+  nav ul li a:hover {
+    color: #00cc00;
+  }
+  
+  section {
+    padding: 3rem 2rem;
+    border-bottom: 1px solid #333;
+  }
+  
+  h1, h2, h3 {
+    color: #66ff66;
+    text-shadow: 0 0 5px #00ff00;
+  }
+  
+  .skills-list ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .skills-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #111;
+    border: 1px solid #33ff33;
+    padding: 0.8rem;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #00990055;
+    transition: background-color 0.3s;
+  }
+  
+  .skills-list li:hover {
+    background-color: #222;
+  }
+  
+  .skills-list img {
+    width: 40px;
+    height: auto;
+    filter: brightness(1.2) drop-shadow(0 0 2px #00ff00);
+  }
+  
+  .project {
+    background-color: #111;
+    border: 1px solid #33ff33;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00990088;
+  }
+  
+  #contact ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+  }
+  
+  #contact a img {
+    width: 20px;
+    height: auto;
+    transition: transform 0.3s ease;
+    filter: brightness(1.1);
+    background: #33ff33;
+    border-radius: 35%;
+    padding: 5px;
+    
+  }
+  
+  #contact a img:hover {
+    transform: scale(1.2);
+  }
+  
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #33ff33;
+    border-top: 2px solid #33ff33;
+  }
+  .glitch {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00ff00;
+    position: relative;
+    display: inline-block;
+    animation: glitch-flicker 3s infinite;
+  }
+  
+/* Glitch effect */
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: #00ff00;
+    background: #0d0d0d;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+  }
+  
+  .glitch::before {
+    animation: glitch-top 2s infinite linear alternate-reverse;
+    color: #ff00c8;
+  }
+  
+  .glitch::after {
+    animation: glitch-bottom 2.5s infinite linear alternate-reverse;
+    color: #00fff7;
+  }
+  
+  @keyframes glitch-top {
+    0% {
+      clip: rect(0, 9999px, 0, 0);
+    }
+    10% {
+      clip: rect(0, 9999px, 12px, 0);
+    }
+    20% {
+      clip: rect(0, 9999px, 6px, 0);
+    }
+    30% {
+      clip: rect(0, 9999px, 18px, 0);
+    }
+    100% {
+      clip: rect(0, 9999px, 0, 0);
+    }
+  }
+  
+  @keyframes glitch-bottom {
+    0% {
+      clip: rect(0, 9999px, 0, 0);
+    }
+    10% {
+      clip: rect(14px, 9999px, 20px, 0);
+    }
+    20% {
+      clip: rect(4px, 9999px, 12px, 0);
+    }
+    30% {
+      clip: rect(6px, 9999px, 16px, 0);
+    }
+    100% {
+      clip: rect(0, 9999px, 0, 0);
+    }
+  }
+  
+  @keyframes glitch-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+    }
+    20%, 22%, 24%, 55% {
+      opacity: 0.3;
+    }
+  }
+
+  
+  
